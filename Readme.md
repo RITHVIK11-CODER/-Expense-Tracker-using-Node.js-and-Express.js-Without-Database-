@@ -2,11 +2,17 @@
 
 <div align="center">
 
+### 🚀 Live Application
+
+**🌐 https://expense-tracker-using-node-js-and.onrender.com**
+
+[![Live Demo](https://img.shields.io/badge/🌍_Live_Demo-Visit_Now-46E3B7?style=for-the-badge)](https://expense-tracker-using-node-js-and.onrender.com)
+
 ![Node.js](https://img.shields.io/badge/Node.js-Express.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![EJS](https://img.shields.io/badge/Template-EJS-blue?style=for-the-badge)
 ![MVC](https://img.shields.io/badge/Architecture-MVC-orange?style=for-the-badge)
 ![Responsive](https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Educational-red?style=for-the-badge)
+![Render](https://img.shields.io/badge/Hosted_on-Render-46E3B7?style=for-the-badge&logo=render)
 
 ### 🚀 A Modern Expense Tracker built with Node.js, Express.js & EJS
 

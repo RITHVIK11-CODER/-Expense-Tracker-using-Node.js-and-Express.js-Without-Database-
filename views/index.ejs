@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Dashboard</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>
+        <i class="fa-solid fa-wallet"></i>
+        Expense Tracker
+    </h1>
+
+    <!-- Summary Cards -->
+
+    <div class="summary">
+
+        <div class="summary-card">
+
+            <h3>
+                <i class="fa-solid fa-money-bill-wave"></i>
+                Income
+            </h3>
+
+            <p>₹ <%= totalIncome %></p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+                <i class="fa-solid fa-credit-card"></i>
+                Expense
+            </h3>
+
+            <p>₹ <%= totalExpense %></p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+                <i class="fa-solid fa-scale-balanced"></i>
+                Balance
+            </h3>
+
+            <p>₹ <%= balance %></p>
+
+        </div>
+
+    </div>
+
+    <!-- Add Button -->
+
+    <div style="text-align:center;margin-bottom:30px;">
+
+        <a href="/add">
+
+            <button>
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Transaction
+
+            </button>
+
+        </a>
+
+    </div>
+
+    <!-- Transaction Table -->
+
+    <div class="card">
+
+        <h2 style="margin-bottom:20px;">
+
+            <i class="fa-solid fa-list"></i>
+
+            Transactions
+
+        </h2>
+
+        <% if(expenses.length===0){ %>
+
+            <div style="text-align:center;padding:50px;">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/4076/4076478.png"
+                     width="120">
+
+                <h3>No Transactions Found</h3>
+
+                <p>Add your first transaction to get started.</p>
+
+            </div>
+
+        <% }else{ %>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>#</th>
+
+                <th>Title</th>
+
+                <th>Amount</th>
+
+                <th>Type</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <% expenses.forEach(function(expense,index){ %>
+
+            <tr>
+
+                <td><%= index+1 %></td>
+
+                <td>
+
+                    <strong><%= expense.title %></strong>
+
+                </td>
+
+                <td>
+
+                    ₹ <%= expense.amount %>
+
+                </td>
+
+                <td>
+
+                    <% if(expense.type==="Income"){ %>
+
+                        <span style="color:green;font-weight:bold;">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                            Income
+
+                        </span>
+
+                    <% }else{ %>
+
+                        <span style="color:red;font-weight:bold;">
+
+                            <i class="fa-solid fa-arrow-trend-down"></i>
+
+                            Expense
+
+                        </span>
+
+                    <% } %>
+
+                </td>
+
+                <td>
+
+<div class="btn-group">
+
+<a href="/edit/<%= index %>">
+<button style="background:#007bff;width:100%;">
+<i class="fa-solid fa-pen"></i> Edit
+</button>
+</a>
+
+<a href="/delete/<%= index %>"
+onclick="return confirmDelete()">
+<button style="background:#dc3545;width:100%;">
+<i class="fa-solid fa-trash"></i> Delete
+</button>
+</a>
+
+</div>
+
+</td>
+
+            </tr>
+
+            <% }) %>
+
+            </tbody>
+
+        </table>
+
+        <% } %>
+
+    </div>
+
+    <div class="footer">
+
+        <h3>
+
+            🚀 Expense Tracker | WAF Lab Session
+
+        </h3>
+
+        <p>
+
+            Designed with ❤️ using Node.js, Express.js & EJS
+
+        </p>
+
+    </div>
+
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>

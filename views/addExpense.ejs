@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Transaction</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        <i class="fa-solid fa-plus-circle"></i>
+        Add New Transaction
+    </h1>
+
+    <form action="/add" method="POST">
+
+        <label>
+            <i class="fa-solid fa-file-signature"></i>
+            Transaction Title
+        </label>
+
+        <input
+            type="text"
+            name="title"
+            placeholder="Enter Transaction Title"
+            required
+        >
+
+        <label>
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            Amount
+        </label>
+
+        <input
+            type="number"
+            name="amount"
+            placeholder="Enter Amount"
+            required
+        >
+
+        <label>
+            <i class="fa-solid fa-layer-group"></i>
+            Transaction Type
+        </label>
+
+        <select name="type" required>
+
+            <option value="">Choose Type</option>
+
+            <option value="Income">
+                💰 Income
+            </option>
+
+            <option value="Expense">
+                💸 Expense
+            </option>
+
+        </select>
+
+        <div class="btn-group">
+
+            <button type="submit">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Transaction
+
+            </button>
+
+            <a href="/">
+
+                <button
+                    type="button"
+                    style="background:#6c757d;">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </form>
+
+    <div class="footer">
+
+        <h3>
+            WAF Lab Session
+        </h3>
+
+        <p>
+            Expense Tracker using Node.js • Express.js • EJS
+        </p>
+
+    </div>
+
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>
